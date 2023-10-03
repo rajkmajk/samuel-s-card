@@ -1,0 +1,153 @@
+:root {
+    --timing: 400ms;
+    --rotation: 20deg;
+}
+  
+html {
+    color-scheme: dark;
+}
+  
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    perspective: 1000px;
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("assets/bloodybkg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* card feature */
+
+img {
+    max-width: 100%;
+}
+  
+.card {
+  width: 270px;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: rotate var(--timing) ease;
+  background-size: cover;
+}
+
+.card:hover {
+  rotate: x 20deg;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-image: radial-gradient(circle, transparent 150px, black);
+  opacity: 0;
+  transition: opacity var(--timing);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 80% 0.5rem 0.5rem;
+  translate: 0;
+  transform: translateZ(-100px);
+  background: black;
+  filter: blur(1rem);
+  z-index: 1;
+  transition: rotate var(--timing), translate var(--timing);
+}
+
+.card:hover::after {
+  translate: 0 60px;
+}
+
+.bg-image {
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  object-fit: cover;
+  object-position: -150px center;
+}
+
+.logo,
+.front-image {
+  position: absolute;
+}
+  
+.front-image {
+  scale: 1.125;
+  transform-origin: bottom;
+  opacity: 0;
+  z-index: 100;
+  transition: var(--timing);
+}
+
+.card:hover .front-image {
+  opacity: 1;
+  transform: translateY(-2rem) translateZ(-10px);
+  rotate: x calc(var(--rotation) * -1);
+}
+
+.logo {
+  z-index: 1000;
+  width: 65%;
+  margin-inline: auto;
+  inset: auto 0 2rem;
+  transform: translateY(0rem) translateZ(20px);
+  transition: var(--timing);
+
+}
+  
+.card:hover .logo {
+  transform: translateY(-2rem) translateZ(20px);
+  rotate: x -30deg;
+}
+
+  
+.inspiration {
+  font-family: system-ui;
+  text-align: center;
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+/* music feature */
+
+.music-container {
+  display: flex;
+  margin-top: 20px;
+  bottom: 100%;
+  right: 100%;
+  position: sticky;
+}
+
+.music-navigation {
+  position: relative;
+}
+
+.music-navigation button {
+  font-size: large;
+  cursor: pointer;
+}
+
+#play {
+  margin: 5px;
+  padding: 20px;
+  color: rgb(219, 125, 16);
+  background-color: rgb(12, 12, 12);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 2px 1px 1px red;
+  transition: all .4s ease-in-out;
+}
+
+#play:hover {
+  transform: scale(1.1);
+  color: red;
+  box-shadow: 10px 5px 5px red;
+}
