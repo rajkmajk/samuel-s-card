@@ -4,5 +4,7 @@ Samuel is mad. Samuel deserves his card.
 
 Be afraid of Samuel. Bang bang!
 
-https://github.com/rajkmajk/samuel-s-card/assets/90977529/65a60b62-a84d-40d8-91d8-46e3e3912f97
 
+
+Made with HTML/CSS and vanilla JavaScript.
+https://github.com/rajkmajk/samuel-s-card/assets/90977529/65a60b62-a84d-40d8-91d8-46e3e3912f97
