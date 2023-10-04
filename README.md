@@ -1,10 +1,11 @@
 *Samuel is mad. Samuel deserves his card.*
 *Be afraid of Samuel. Bang bang!*
 
+---
 
 Samuel is a fictional character from Quentin Tarantino's movie "Pulp Fiction".
 
-
+--- 
 
 Made with HTML/CSS and vanilla JavaScript.
 
